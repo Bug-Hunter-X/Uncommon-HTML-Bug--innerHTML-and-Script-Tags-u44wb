@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Incorrect attempt to manipulate the DOM
+    // This may cause errors in some browsers or situations
+    document.getElementById("myDiv").innerHTML = "<p>This text replaces the div content. But there is a problem if the innerHTML contains <script> tag.</p><script>alert('This script is executed');</script>"; 
+  </script>
+</body>
+</html>
