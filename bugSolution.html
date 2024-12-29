@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Safe method for updating the DOM and adding a new script
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = 'This text replaces the div content.';
+    document.getElementById('myDiv').appendChild(newParagraph);
+
+    // Add new script element safely
+    const newScript = document.createElement('script');
+    newScript.textContent = "alert('This script is executed safely');";
+    document.body.appendChild(newScript);
+
+    //Or fetch and add script from an external source:
+    //fetch('externalScript.js').then(response => response.text()).then(data => {
+    //  const newScript = document.createElement('script');
+    //  newScript.textContent = data; 
+    //  document.body.appendChild(newScript);
+    //});
+  </script>
+</body>
+</html>
